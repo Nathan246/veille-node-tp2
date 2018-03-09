@@ -5,10 +5,14 @@
 	"bienvenue" : "Bienvenue dans la salle de clavardage!",
 	"clavardage" : "Clavardage",
 	"courriel" : "Courriel",
+	"enregistrement" : "Enregistrement",
 	"langue" : "English",
+	"liste_utilisateurs" : "Liste d'utilisateurs",
 	"modifier" : "Modifier",
 	"nom" : "Nom",
+	"nom_complet" : "Nom",
 	"prenom" : "Prénom",
 	"telephone" : "Téléphone",
+	"transmettre" : "Transmettre",
 	"vider" : "Vider"
 }

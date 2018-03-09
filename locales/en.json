@@ -5,10 +5,14 @@
 	"bienvenue" : "Welcome to the chat room!",
 	"clavardage" : "Chat",
 	"courriel": "E-mail",
+	"enregistrement" : "Save",
 	"langue" : "Français",
+	"liste_utilisateurs" : "User list",
 	"modifier": "Edit",
 	"nom" : "Last name",
+	"nom_complet" : "Name",
 	"prenom" : "First name",
 	"telephone" : "Phone",
+	"transmettre" : "Send",
 	"vider": "Wipe"
 }
