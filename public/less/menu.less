@@ -76,7 +76,7 @@
   a {
   		color : @couleur_lien ;
 		text-decoration :  none;
-		padding : 1%;
+		/*padding : 1%;*/
   	}
   }
 } // .couleur-menu
@@ -111,30 +111,40 @@
 		 position : static;
 		 display : flex;
 		 position: static;
-    	width: 100%;
+    	/*width: 100%;*/
+    	width: 1020px;
+    	margin: 0 auto;
     	justify-content: flex-start;
     	flex-direction : row;
     	background-color : #fff;
 		
 
-					a {
+			a {
 				display : flex;
 				justify-content: space-between;
-				width : 20%; 
-	    		padding-right: 7%;
-	    		padding-left: 7%;
+				/*width : 20%; */
+	    		padding: 20px;
 				.fa {
 					color :  @couleur_lien;
 					min-width : 1em;
 					min-width: 38%;
 				}
 			}
+
 			a:hover {
 				background-color: #bbb;
 				color : darken(@couleur_lien, 20%) ;
 					.fa {
 					color : darken(@couleur_lien, 20%) ;
 				}
+			}
+
+			svg {
+				padding-right: 10px;
+			}
+
+			form.recherche {
+				padding: 15px 20px 20px 20px;
 			}
 	
 
