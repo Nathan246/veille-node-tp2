@@ -4,11 +4,15 @@
  <button onclick="enregistrement()"><%=__('enregistrement')%></button>
 </section>
 <section id="chat" style="display:none">
-	<h3><%=__('liste_utilisateurs')%></h3>
-	<table id="list_user">
-	</table>
+	<section id="list_user_conteneur">
+		<h3><%=__('liste_utilisateurs')%></h3>
+		<table id="list_user">
+		</table>
+	</section>
 	<h3><%=__('bienvenue')%></h3>
-	<table id="message"></table>
+	<section id="contenu_message">
+		<table id="message"></table>
+	</section>
 	<section id="message_a_transmettre">
 		<input type="text" name="txtMessage"><button><%=__('transmettre')%></button>
 	</section>
@@ -41,12 +45,12 @@ Pour établir une communication socket il faut un premier appel de
 		 /////////////////////////////////////////////////////////////////////////////
 		 socket.on('valide_message', function(data) {
 		 	console.log('valide_message = ' + data.message);
-		 	affiche_mon_message(data, '#0f0')
+		 	affiche_mon_message(data, '#007F00')
 		 })
 		 /////////////////////////////////////////////////////////////////////////////
 		 socket.on('diffuser_message', function(data) {
 		 	console.log('diffuser_message = ' + data.message);
-		 	affiche_mon_message(data,'#00f')
+		 	affiche_mon_message(data,'#00007F')
 		 })
 	 });
  }

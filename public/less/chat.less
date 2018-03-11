@@ -1,10 +1,24 @@
-#chat table, #chat tr, #list_user td, #list_user th {
+#list_user, #list_user tr, #list_user td, #list_user th {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
 
-#chat table {
+#contenu_message {
+	border: 1px solid black;
+	width: 400px;
+	height: 500px;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+
+#list_user_conteneur {
+	display: flex;
+	flex-direction: column;
+}
+
+#list_user {
 	margin: 10px;
+	width: 95%;
 }
 
 #chat table * {

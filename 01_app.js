@@ -80,8 +80,7 @@ app.post('/rechercher',  (req, res) => {
 	console.log("match[1] = " + match[1]); 
 
    console.log(recherche)
-   let cursor = db.collection('adresse')
-                .find({$or: [ 
+   let cursor = db.collection('adresse').find({$or: [ 
                 				{nom: {$regex :regRecherche, $options: "$i"}},
                 			  {prenom: {$regex :regRecherche, $options: "$i"}},
                 			 	{telephone: {$regex :regRecherche, $options: "$i"}},
@@ -99,7 +98,6 @@ console.log('route /ajouter')
  if (err) return console.log(err)
  // console.log(req.body)	
  console.log('sauvegarder dans la BD')
- //res.redirect('/adresse')
  res.send(JSON.stringify(req.body));
  })
 })
@@ -113,7 +111,6 @@ console.log("req.body._id = " + req.body._id);
  db.collection('adresse').save(req.body, (err, result) => {
 	 if (err) return console.log(err)
 	 console.log('sauvegarder dans la BD')
-	 //res.redirect('/adresse')
 	 res.send(JSON.stringify(req.body));
 	 })
 })
@@ -128,7 +125,6 @@ app.get('/detruire/:id', (req, res) => {
  db.collection('adresse').findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
 
 if (err) return console.log(err)
- //res.redirect('/adresse')  // redirige vers la route qui affiche la collection
 	res.send(JSON.stringify(ObjectID(req.params.id)));
  })
 })
@@ -149,17 +145,6 @@ app.get('/trier/:cle/:ordre', (req, res) => {
 /////////////////////////////////////////////////////////  Route /peupler
 app.get('/peupler', (req, res) => {
 	let collectionMembre = peupler()
-	/*
-	for (elm of tabMembre)
-	{
-	let cursor = db.collection('adresse').save(elm, (err, res)=>{
-		if(err) console.error(err)
-			console.log('ok')
-
-		})
-	}
-	*/
-
 	let cursor = db.collection('adresse').insertMany(collectionMembre, (err, resultat)=>{
 		if(err) console.error(err)
 			// console.log('ok')
