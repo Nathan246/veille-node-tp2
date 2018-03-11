@@ -70,9 +70,7 @@
             console.log('ajax fonctionne')
             let  maReponse = JSON.parse(xhr.responseText);
             console.log(xhr.responseText);
-            console.log(maReponse._id);
-
-            
+            console.log(maReponse._id);          
         }
     }
 
@@ -116,7 +114,7 @@
             "telephone" : telephone,
             "courriel" : courriel*/
         }
-        console.log(data)
+        //console.log(data)
         sData = JSON.stringify(data);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.send(sData);
