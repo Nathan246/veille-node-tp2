@@ -99,8 +99,7 @@ app.post('/rechercher',  (req, res) => {
 app.post('/ajouter', (req, res) => {
 console.log('route /ajouter')	
  db.collection('adresse').save(req.body, (err, result) => {
- if (err) return console.log(err)
- // console.log(req.body)	
+ if (err) return console.log(err)	
  console.log('sauvegarder dans la BD')
  res.send(JSON.stringify(req.body));
  })
@@ -109,7 +108,6 @@ console.log('route /ajouter')
 ////////////////////////////////////////  Route /modifier
 app.post('/modifier', (req, res) => {
 console.log('route /modifier')
-// console.log('util = ' + util.inspect(req.body));
 req.body._id = 	ObjectID(req.body._id)
 console.log("req.body._id = " + req.body._id);
  db.collection('adresse').save(req.body, (err, result) => {
@@ -123,7 +121,6 @@ console.log("req.body._id = " + req.body._id);
 ////////////////////////////////////////  Route /detruire
 app.get('/detruire/:id', (req, res) => {
  console.log('route /detruire')
- // console.log('util = ' + util.inspect(req.params));	
  var id = req.params.id
  console.log(id)
  db.collection('adresse').findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
@@ -151,8 +148,6 @@ app.get('/peupler', (req, res) => {
 	let collectionMembre = peupler()
 	let cursor = db.collection('adresse').insertMany(collectionMembre, (err, resultat)=>{
 		if(err) console.error(err)
-			// console.log('ok')
-			// console.log(util.inspect(resultat))
 			res.redirect('/adresse')
 		})
 })
@@ -163,7 +158,6 @@ app.get('/vider', (req, res) => {
 	let cursor = db.collection('adresse').drop((err, res)=>{
 		if(err) console.error(err)
 			console.log('ok')
-			
 		})
 	res.redirect('/adresse')
 })
