@@ -58,9 +58,13 @@ app.get('/:local(en|fr)', function (req, res) {
 	console.log(req.params.local);
 	res.cookie('langueChoisie', req.params.local);
 	res.setLocale(req.params.local);
+	console.log(req.get('referer'));
 
- 	res.redirect(req.get('referer'))
- 
+	if(req.get('referer') == "http://localhost:8081/rechercher") {
+ 		res.redirect('/adresse')
+ 	} else {
+ 		res.redirect(req.get('referer'))
+ 	}
   });
 
 //////////////////////////////////////////  Route Adresse
