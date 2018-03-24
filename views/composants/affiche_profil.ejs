@@ -1,5 +1,5 @@
 <h2><%=__('profil_de') %> <%= adresses[0].prenom %></h2>
-<table class='tableau'>
+<table class='tableau profil_tab'>
 	 <% adresses.forEach(elm => {%>
 		 <tr><th><%=__('nom_complet') %></th><td> <%= elm.prenom %> <%= elm.nom %></td></tr>
 		 <tr><th><%=__('telephone') %></th><td> <%= elm.telephone %></td></tr>
