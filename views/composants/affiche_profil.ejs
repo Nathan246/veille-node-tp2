@@ -1,10 +1,8 @@
-<h2>Profil de <%= adresses[0].prenom %></h2>
+<h2><%=__('profil_de') %> <%= adresses[0].prenom %></h2>
 <table class='tableau'>
 	 <% adresses.forEach(elm => {%>
-		 <tr><th>Nom</th><td> <%= elm.prenom %> <%= elm.nom %></td></tr>
-		 <tr><th>Téléphone</th><td> <%= elm.telephone %></td></tr>
-		 <tr><th>Courriel</th><td> <%= elm.courriel %></td></tr>
-		 <tr><th>Habite à</th><td> <%= elm.ville %></td></tr>
-		 <tr><th>Intérêts</th><td> <%= elm.interets %></td></tr>
+		 <tr><th><%=__('nom_complet') %></th><td> <%= elm.prenom %> <%= elm.nom %></td></tr>
+		 <tr><th><%=__('telephone') %></th><td> <%= elm.telephone %></td></tr>
+		 <tr><th><%=__('courriel') %></th><td> <%= elm.courriel %></td></tr>
 	 <% }) %>
 </table>
