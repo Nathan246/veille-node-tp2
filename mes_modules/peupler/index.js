@@ -8,6 +8,8 @@ const util = require('util')
 const longTabNom = tableau.nom.length
 const longTabPrenom = tableau.prenom.length
 const longTabDomaine = tableau.domaine.length
+const longTabVille = tableau.ville.length
+const longTabInterets = tableau.interets.length
 const genere_telephone = ()=> {
   let sTel = ''
   for (let k=0 ; k<10 ; k++)
@@ -36,17 +38,23 @@ const peupler_json = ()=> {
    let nom 
    let prenom
    let domaine
+   let ville
+   let interets
    for (let k=0 ; k <20; k++)
    {
      nom = tableau.nom[Math.floor(Math.random()*longTabNom)]
      prenom = tableau.prenom[Math.floor(Math.random()*longTabPrenom)]
      domaine =  tableau.domaine[Math.floor(Math.random()*longTabDomaine)]
+     ville = tableau.ville[Math.floor(Math.random()*longTabVille)]
+     interets = tableau.interets[Math.floor(Math.random()*longTabInterets)]
      tabMembre[k] =
      {
        "nom" :  nom,
        "prenom" :  prenom,
        "telephone" : genere_telephone(),
-       "courriel" :  prenom.charAt(0).toLowerCase() + nom.toLowerCase() + '@' + domaine
+       "courriel" :  prenom.charAt(0).toLowerCase() + nom.toLowerCase() + '@' + domaine,
+       "ville" : ville,
+       "interets" : interets
      }
    }
 // console.log(util.inspect(tabMembre))

@@ -21,7 +21,7 @@
         <th><a href="/trier/prenom/<%= objOrdre.prenom %>"><%=__('prenom') %><i class="fas fa-<%= (objOrdre.prenom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>        
         <th><a href="/trier/telephone/<%= objOrdre.telephone %>"><%=__('telephone') %><i class="fas fa-<%= (objOrdre.telephone=='asc'?'sort-up': 'sort-down') %>"></i></a></th>  
         <th><a href="/trier/courriel/<%= objOrdre.courriel %>"><%=__('courriel') %><i class="fas fa-<%= (objOrdre.courriel=='asc'?'sort-up': 'sort-down') %>"></i></a></th> 
-        <th colspan="2"><a id="boutonAjouter" href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></th>      
+        <th colspan="2"><a id="boutonAjouter"><i class="fa fa-plus" aria-hidden="true"></i></a></th>      
     </tr>
     <%  for (elm of adresses) {%>
     <tr>
@@ -29,9 +29,10 @@
         <td contenteditable='true'><%= elm.nom %></td>
         <td contenteditable='true'><%= elm.prenom %></td>
         <td contenteditable='true'><%= elm.telephone %></td>                
-        <td contenteditable='true'><%= elm.courriel %></td>    
-        <td><a class="detruire" href="#"><i class="fas fa-trash-alt" aria-hidden="true"></i></a></td>
-        <td><a class='modifier' href="#"><i class="far fa-save" aria-hidden="true"></i></a></td>
+        <td contenteditable='true'><%= elm.courriel %></td>
+        <td><a class="profil" href="/profil/<%=elm._id%>"><i class="fas fa-user" aria-hidden="true"></i></a></td>    
+        <td><a class="detruire"><i class="fas fa-trash-alt" aria-hidden="true"></i></a></td>
+        <td><a class='modifier'><i class="far fa-save" aria-hidden="true"></i></a></td>
     </tr>
     <% } %>
 </table>
@@ -62,12 +63,13 @@
             let table = document.getElementsByTagName("table")[0]
             let tr = document.createElement("tr");
             let td = new Array()
-            for (let i = 0; i < 7; i++) {
+            for (let i = 0; i < 8; i++) {
                 td[i] = tr.appendChild(document.createElement('td'));
             }
             td[0].innerHTML = maReponse._id;
-            td[5].innerHTML = "<a class='detruire' href='#'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>";
-            td[6].innerHTML = "<a class='modifier' href='#'><i class='far fa-save' aria-hidden='true'></i></a>";
+            td[5].innerHTML = "<a class='profil' href='/profil/<%=elm._id%>'><i class='fas fa-user' aria-hidden='true'></i></a>";
+            td[6].innerHTML = "<a class='detruire'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>";
+            td[7].innerHTML = "<a class='modifier'><i class='far fa-save' aria-hidden='true'></i></a>";
             table.appendChild(tr);
             for (let i = 0; i < 5; i++) {
                 let att = document.createAttribute("contenteditable");

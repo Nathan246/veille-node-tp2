@@ -4,6 +4,7 @@
 
 'use strict';
 const Tableau = {
+
       nom : [ 
                'Martin',
                'Marchand',
@@ -107,9 +108,19 @@ const Tableau = {
                   'Coralie',
                   'Pénéloppe',
                   'Charlotte'
-                    ]
+                    ],
 
-            }        
+   interets : [
+      "Courir",
+      "Pêcher",
+      "Faire du vélo",
+      "Jouer à des jeux-vidéo",
+      "Regarder des films",
+      "Dormir",
+      "Programmer"
+   ]
+
+            }       
 
 module.exports = Tableau
 

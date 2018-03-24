@@ -152,7 +152,7 @@ app.get('/peupler', (req, res) => {
 		})
 })
 
-/////////////////////////////////////////////////////////  Route /peupler
+/////////////////////////////////////////////////////////  Route /vider
 app.get('/vider', (req, res) => {
 
 	let cursor = db.collection('adresse').drop((err, res)=>{
@@ -162,7 +162,19 @@ app.get('/vider', (req, res) => {
 	res.redirect('/adresse')
 })
 
+/////////////////////////////////////////////////////////  Route /profil
+app.get('/profil/:id', function (req, res) {
+	let id = req.params.id 
+	let critere = ObjectID(req.params.id)
+   let cursor = db.collection('adresse').find({"_id": critere}).toArray(function(err, resultat){
+ if (err) return console.log(err)
+ // transfert du contenu vers la vue adresses.ejs (renders)
+ // affiche le contenu de la BD
+ res.render('profil.ejs', {adresses: resultat})
+ }) 
+})
 
+/////////////////////////////////////////////////////////  Route /chat
 app.get('/chat', (req, res) => {
 	res.render('socket_vue.ejs');
 })
